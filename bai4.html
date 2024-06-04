@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="myCanvas" width="500" height="500"></canvas>
+</body>
+<script>
+    class Rectangle {
+        constructor(x, y, width, height, color) {
+            this.x = x;
+            this.y = y;
+            this.width = width;
+            this.height = height;
+            this.color = color;
+        }
+
+        rendex(canvar) {
+            const ctx = canvar.getContext('2d');
+            ctx.fillStyle = this.color;
+            ctx.fillRect(this.x, this.y, this.width, this.height);
+        }
+    }
+    document.addEventListener('DOMContentLoaded', () =>{
+       const canvas = document.getElementById('myCanvas');
+       const rect = new  Rectangle(50,50,150,100, '#FF5733');
+       rect.rendex(canvas);
+    });
+</script>
+</html>

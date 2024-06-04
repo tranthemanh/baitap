@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    function findAvg() {
+        let diem = ['8','10','10','10'];
+        let tong = 0;
+        let luot = 0;
+        for (let i = 0; i < diem.length; i++) {
+            tong += +diem[i];
+            luot++;
+        }
+        document.write('Diem trung binh la: '+tong/luot);
+    }
+    findAvg();
+</script>
+</body>
+</html>

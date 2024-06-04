@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function insertNumberToArray(arr,x,index) {
+        for (let i = 0; i < arr.length; i++) {
+            if (index < 0 || index > arr.length){
+                document.write(`Mang ban dau la: ${arr} <br>`);
+                break;
+            } else {
+                arr.push(x);
+                document.write(`Mang co cac phan tu la: ${arr} <br>`);
+                break;
+            }
+        }
+    }
+    let arr = ['1','2','3','4','5'];
+    insertNumberToArray(arr,14,10);
+</script>
+</body>
+</html>

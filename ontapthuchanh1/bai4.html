@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class DienThoai {
+        constructor(maDT, ten, hang, gia) {
+            this._maDT = maDT;
+            this._ten = ten;
+            this._hang = hang;
+            this._gia = gia;
+        }
+
+        get maDt(){
+            return this._maDT;
+        }
+        get ten(){
+            return this._ten;
+        }
+        get hang(){
+            return this._hang;
+        }
+        get gia(){
+            return this._gia;
+        }
+
+        set maDT(maMoi){
+            this._maDT = maMoi;
+        }
+        set ten(tenMoi){
+            this._ten = tenMoi;
+        }
+        set hang(hangMoi){
+            this._hang = hangMoi;
+        }
+        set gia(giaMoi){
+            this._gia = giaMoi;
+        }
+        getI4(){
+            document.write(`Mã: ${this.maDt}, Tên: ${this.ten}, Hãng sản xuất: ${this.hang}, Giá bán: ${this.gia} <br>`);
+        }
+    }
+    let danhSachDienThoai = [];
+
+    // Hàm thêm mới một điện thoại
+    function themDienThoai(maDT, ten, hang, gia) {
+        const dienThoai = new DienThoai(maDT, ten, hang, gia);
+        danhSachDienThoai.push(dienThoai);
+    }
+
+    // Hàm hiển thị danh sách điện thoại đã sắp xếp theo tên
+    function hienThiDanhSachDienThoai() {
+        danhSachDienThoai.sort((a, b) => a.ten.localeCompare(b.ten));
+        danhSachDienThoai.forEach(dienThoai => {
+            console.log(dienThoai.getI4());
+        });
+    }
+    themDienThoai('001', 'iPhone 13', 'Apple', 999);
+    themDienThoai('002', 'Galaxy S21', 'Samsung', 799);
+    themDienThoai('003', 'Pixel 6', 'Google', 599);
+
+    // Hiển thị danh sách điện thoại đã sắp xếp
+    hienThiDanhSachDienThoai();
+</script>
+</body>
+</html>
